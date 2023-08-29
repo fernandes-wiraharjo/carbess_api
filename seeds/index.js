@@ -24,6 +24,9 @@ const seedDB = async () => {
         });
         await brand.save();
     }
+
+    //models
+    
 }
 
 seedDB().then(() => {
