@@ -4,7 +4,8 @@ const { currentTimestamp } = require('../utils/datetime');
 
 const brandSchema = new Schema({
     name: String,
-    createdAt: {
+    logo: String,
+    created_at: {
         type: Date,
         default: currentTimestamp
     }
