@@ -5,12 +5,14 @@ const colors = require('./colors');
 const transmissions = require('./transmissions');
 const bodyTypes = require('./bodyTypes');
 const fuels = require('./fuels');
+const wheelDrives = require('./wheelDrives');
 const Brand = require('../models/brand');
 const Model = require('../models/model');
 const Color = require('../models/color');
 const Transmission = require('../models/transmission');
 const BodyType = require('../models/bodyType');
 const Fuel = require('../models/fuel');
+const WheelDrive = require('../models/wheelDrive');
 
 mongoose.set('strictQuery', false);
 
@@ -73,13 +75,22 @@ const seedDB = async () => {
         await bodyType.save();
     }
 
-    //body types
+    //fuels
     await Fuel.deleteMany({});
     for (let i=0; i < fuels.length; i++) {
         const fuel = new Fuel({
             name: fuels[i].name
         });
         await fuel.save();
+    }
+
+    //whell drives
+    await WheelDrive.deleteMany({});
+    for (let i=0; i < wheelDrives.length; i++) {
+        const wheelDrive = new WheelDrive({
+            name: wheelDrives[i].name
+        });
+        await wheelDrive.save();
     }
 }
 
