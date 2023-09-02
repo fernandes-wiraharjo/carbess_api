@@ -6,6 +6,8 @@ const transmissions = require('./transmissions');
 const bodyTypes = require('./bodyTypes');
 const fuels = require('./fuels');
 const wheelDrives = require('./wheelDrives');
+const cars = require('./cars');
+const carImages = require('./carImages');
 const Brand = require('../models/brand');
 const Model = require('../models/model');
 const Color = require('../models/color');
@@ -13,6 +15,8 @@ const Transmission = require('../models/transmission');
 const BodyType = require('../models/bodyType');
 const Fuel = require('../models/fuel');
 const WheelDrive = require('../models/wheelDrive');
+const Car = require('../models/car');
+const CarImage = require('../models/carImage');
 
 mongoose.set('strictQuery', false);
 
@@ -91,6 +95,28 @@ const seedDB = async () => {
             name: wheelDrives[i].name
         });
         await wheelDrive.save();
+    }
+
+    //cars
+    await Car.deleteMany({});
+    for (let i=0; i < cars.length; i++) {
+        const car = new Car({
+            name: cars[i].name,
+            price: cars[i].price,
+            is_recommended: cars[i].is_recommended
+        });
+        await car.save();
+    }
+
+    //car images
+    await CarImage.deleteMany({});
+    for (let i=0; i < carImages.length; i++) {
+        const carImage = new CarImage({
+            image: carImages[i].image,
+            car: await Car.findOne({ name: carImages[i].car_name }).select('_id'),
+            is_main: carImages[i].is_main
+        });
+        await carImage.save();
     }
 }
 
