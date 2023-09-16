@@ -4,10 +4,6 @@ const { currentTimestamp } = require('../utils/datetime');
 
 const carImageSchema = new Schema({
     image: String,
-    car: {
-        type: Schema.Types.ObjectId,
-        ref: 'Car'
-    },
     is_main: {
         type: Boolean,
         default: false

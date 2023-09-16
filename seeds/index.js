@@ -33,90 +33,92 @@ db.once("open", () => {
 
 const seedDB = async () => {
     // brands
-    await Brand.deleteMany({});
-    for (let i = 0; i < brands.length; i++) {
-        const brand = new Brand({
-            name: brands[i].name,
-            logo: brands[i].logo
-        });
-        await brand.save();
-    }
+    // await Brand.deleteMany({});
+    // for (let i = 0; i < brands.length; i++) {
+    //     const brand = new Brand({
+    //         name: brands[i].name,
+    //         logo: brands[i].logo
+    //     });
+    //     await brand.save();
+    // }
 
-    //models
-    await Model.deleteMany({});
-    for (let i=0; i < models.length; i++) {
-        const model = new Model({
-            name: models[i].name,
-            brand: await Brand.findOne({ name: models[i].brandName }).select('_id')
-        });
-        await model.save();
-    }
+    // //models
+    // await Model.deleteMany({});
+    // for (let i=0; i < models.length; i++) {
+    //     const model = new Model({
+    //         name: models[i].name,
+    //         brand: await Brand.findOne({ name: models[i].brandName }).select('_id')
+    //     });
+    //     await model.save();
+    // }
 
-    //colors
-    await Color.deleteMany({});
-    for (let i=0; i < colors.length; i++) {
-        const color = new Color({
-            name: colors[i].name
-        });
-        await color.save();
-    }
+    // //colors
+    // await Color.deleteMany({});
+    // for (let i=0; i < colors.length; i++) {
+    //     const color = new Color({
+    //         name: colors[i].name
+    //     });
+    //     await color.save();
+    // }
 
-    //transmissions
-    await Transmission.deleteMany({});
-    for (let i=0; i < transmissions.length; i++) {
-        const transmission = new Transmission({
-            name: transmissions[i].name
-        });
-        await transmission.save();
-    }
+    // //transmissions
+    // await Transmission.deleteMany({});
+    // for (let i=0; i < transmissions.length; i++) {
+    //     const transmission = new Transmission({
+    //         name: transmissions[i].name
+    //     });
+    //     await transmission.save();
+    // }
 
-    //body types
-    await BodyType.deleteMany({});
-    for (let i=0; i < bodyTypes.length; i++) {
-        const bodyType = new BodyType({
-            name: bodyTypes[i].name
-        });
-        await bodyType.save();
-    }
+    // //body types
+    // await BodyType.deleteMany({});
+    // for (let i=0; i < bodyTypes.length; i++) {
+    //     const bodyType = new BodyType({
+    //         name: bodyTypes[i].name
+    //     });
+    //     await bodyType.save();
+    // }
 
-    //fuels
-    await Fuel.deleteMany({});
-    for (let i=0; i < fuels.length; i++) {
-        const fuel = new Fuel({
-            name: fuels[i].name
-        });
-        await fuel.save();
-    }
+    // //fuels
+    // await Fuel.deleteMany({});
+    // for (let i=0; i < fuels.length; i++) {
+    //     const fuel = new Fuel({
+    //         name: fuels[i].name
+    //     });
+    //     await fuel.save();
+    // }
 
-    //whell drives
-    await WheelDrive.deleteMany({});
-    for (let i=0; i < wheelDrives.length; i++) {
-        const wheelDrive = new WheelDrive({
-            name: wheelDrives[i].name
-        });
-        await wheelDrive.save();
-    }
-
-    //cars
-    await Car.deleteMany({});
-    for (let i=0; i < cars.length; i++) {
-        const car = new Car({
-            name: cars[i].name,
-            price: cars[i].price,
-            is_recommended: cars[i].is_recommended
-        });
-        await car.save();
-    }
+    // //whell drives
+    // await WheelDrive.deleteMany({});
+    // for (let i=0; i < wheelDrives.length; i++) {
+    //     const wheelDrive = new WheelDrive({
+    //         name: wheelDrives[i].name
+    //     });
+    //     await wheelDrive.save();
+    // }
 
     //car images
     await CarImage.deleteMany({});
     for (let i=0; i < carImages.length; i++) {
         const carImage = new CarImage({
             image: carImages[i].image,
-            car: await Car.findOne({ name: carImages[i].car_name }).select('_id'),
+            // car: await Car.findOne({ name: carImages[i].car_name }).select('_id'),
             is_main: carImages[i].is_main
         });
         await carImage.save();
+    }
+
+    //cars
+    const idCarImages = await CarImage.find().select('_id');
+    await Car.deleteMany({});
+    for (let i=0; i < cars.length; i++) {
+        const car = new Car({
+            name: cars[i].name,
+            price: cars[i].price,
+            is_recommended: cars[i].is_recommended,
+            images: i == 0 ? idCarImages : []
+        });
+        await car.save();
     }
 }
 

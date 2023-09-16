@@ -47,6 +47,12 @@ const carSchema = new Schema({
         type: Boolean,
         default: false
     },
+    images: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'CarImage'
+        }
+    ],
     created_at: {
         type: Date,
         default: currentTimestamp
