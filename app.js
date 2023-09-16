@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const ExpressError = require('./utils/ExpressError');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const dbUrl = process.env.DB_URL;
 
@@ -22,6 +23,10 @@ db.once("open", () => {
 const app = express();
 
 const carRoutes = require('./routes/car');
+
+app.use(cors({
+    origin: '*'
+}));
 
 app.use('/cars', carRoutes);
 
