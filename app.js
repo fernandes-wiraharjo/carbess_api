@@ -23,12 +23,14 @@ db.once("open", () => {
 const app = express();
 
 const carRoutes = require('./routes/car');
+const brandRoutes = require('./routes/brand');
 
 app.use(cors({
     origin: '*'
 }));
 
 app.use('/cars', carRoutes);
+app.use('/brands', brandRoutes);
 
 app.get('/', (req, res) => {
     res.send('home');
