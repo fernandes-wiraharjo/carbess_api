@@ -24,6 +24,11 @@ const app = express();
 
 const carRoutes = require('./routes/car');
 const brandRoutes = require('./routes/brand');
+const modelRoutes = require('./routes/model');
+const transmissionRoutes = require('./routes/transmission');
+const bodyTypeRoutes = require('./routes/bodyType');
+const fuelRoutes = require('./routes/fuel');
+const driveWheelTypeRoutes = require('./routes/driveWheelType');
 
 app.use(cors({
     origin: '*'
@@ -31,6 +36,11 @@ app.use(cors({
 
 app.use('/cars', carRoutes);
 app.use('/brands', brandRoutes);
+app.use('/models', modelRoutes);
+app.use('/transmissions', transmissionRoutes);
+app.use('/body-types', bodyTypeRoutes);
+app.use('/fuels', fuelRoutes);
+app.use('/drive-wheel-types', driveWheelTypeRoutes);
 
 app.get('/', (req, res) => {
     res.send('home');
