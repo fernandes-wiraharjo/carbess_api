@@ -29,6 +29,7 @@ const transmissionRoutes = require('./routes/transmission');
 const bodyTypeRoutes = require('./routes/bodyType');
 const fuelRoutes = require('./routes/fuel');
 const driveWheelTypeRoutes = require('./routes/driveWheelType');
+const colorRoutes = require('./routes/color');
 
 app.use(cors({
     origin: '*'
@@ -41,6 +42,7 @@ app.use('/transmissions', transmissionRoutes);
 app.use('/body-types', bodyTypeRoutes);
 app.use('/fuels', fuelRoutes);
 app.use('/drive-wheel-types', driveWheelTypeRoutes);
+app.use('/colors', colorRoutes);
 
 app.get('/', (req, res) => {
     res.send('home');
