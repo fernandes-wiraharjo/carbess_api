@@ -4,6 +4,7 @@ const express = require('express');
 const ExpressError = require('./utils/ExpressError');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const dbUrl = process.env.DB_URL;
 
@@ -34,6 +35,8 @@ const colorRoutes = require('./routes/color');
 app.use(cors({
     origin: '*'
 }));
+
+app.use(bodyParser.json());
 
 app.use('/cars', carRoutes);
 app.use('/brands', brandRoutes);

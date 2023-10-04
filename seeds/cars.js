@@ -1,43 +1,124 @@
 module.exports = [
     {
         name: 'Xpander Ultimate 2018',
-        price: 225000000
+        price: 225000000,
+        brandName: 'Mitsubishi',
+        modelName: 'Xpander',
+        year: 2018,
+        colorName: 'silver',
+        transmissionName: 'Automatic',
+        kilometer: '50000',
+        bodyTypeName: 'MPV',
+        fuelName: 'Premium',
+        wheelDriveName: 'AWD (All Wheel Drive)'
     },
     {
         name: 'Innova G 2018',
-        price: 290000000
+        price: 290000000,
+        brandName: 'Toyota',
+        modelName: 'Innova',
+        year: 2018,
+        colorName: 'silver',
+        transmissionName: 'Automatic',
+        kilometer: '50000',
+        bodyTypeName: 'MPV',
+        fuelName: 'Diesel',
+        wheelDriveName: 'AWD (All Wheel Drive)'
     },
     {
         name: 'Camry 2011 V',
-        price: 165000000
+        price: 165000000,
+        brandName: 'Toyota',
+        modelName: 'Camry',
+        year: 2011,
+        colorName: 'black',
+        transmissionName: 'Automatic',
+        kilometer: '120000',
+        bodyTypeName: 'Sedan',
+        fuelName: 'Pertamax',
+        wheelDriveName: 'AWD (All Wheel Drive)'
     },
     {
         name: 'HRV E CVT 2015',
-        price: 235000000
+        price: 235000000,
+        brandName: 'Honda',
+        modelName: 'HRV',
+        year: 2015,
+        colorName: 'silver',
+        transmissionName: 'Automatic',
+        kilometer: '80000',
+        bodyTypeName: 'SUV',
+        fuelName: 'Pertamax',
+        wheelDriveName: 'AWD (All Wheel Drive)'
     },
     {
         name: 'Fortuner v 4x4 AT 2012',
         price: 280000000,
-        is_recommended: true
+        is_recommended: true,
+        brandName: 'Toyota',
+        modelName: 'Fortuner',
+        year: 2012,
+        colorName: 'silver',
+        transmissionName: 'Automatic',
+        kilometer: '110000',
+        bodyTypeName: 'SUV',
+        fuelName: 'Diesel',
+        wheelDriveName: 'AWD (All Wheel Drive)'
     },
     {
         name: 'Mazda 2 R 2016 Skyactive',
         price: 185000000,
-        is_recommended: true
+        is_recommended: true,
+        brandName: 'Mazda',
+        modelName: '2',
+        year: 2016,
+        colorName: 'white',
+        transmissionName: 'Automatic',
+        kilometer: '70000',
+        bodyTypeName: 'Hatchback',
+        fuelName: 'Pertamax',
+        wheelDriveName: 'AWD (All Wheel Drive)'
     },
     {
         name: 'Raize 1.0 Turbo Sport 2021',
         price: 275000000,
-        is_recommended: true
+        is_recommended: true,
+        brandName: 'Toyota',
+        modelName: 'Raize',
+        year: 2021,
+        colorName: 'yellow',
+        transmissionName: 'Automatic',
+        kilometer: '20000',
+        bodyTypeName: 'SUV',
+        fuelName: 'Premium',
+        wheelDriveName: 'AWD (All Wheel Drive)'
     },
     {
         name: 'Honda Brio E Cvt 2019',
         price: 170000000,
-        is_recommended: true
+        is_recommended: true,
+        brandName: 'Honda',
+        modelName: 'Brio',
+        year: 2019,
+        colorName: 'red',
+        transmissionName: 'Manual',
+        kilometer: '40000',
+        bodyTypeName: 'Hatchback',
+        fuelName: 'Premium',
+        wheelDriveName: 'AWD (All Wheel Drive)'
     },
     {
         name: 'Jazz rs 2011 white',
         price: 138000000,
-        is_recommended: true
+        is_recommended: true,
+        brandName: 'Honda',
+        modelName: 'Jazz',
+        year: 2011,
+        colorName: 'white',
+        transmissionName: 'Automatic',
+        kilometer: '120000',
+        bodyTypeName: 'Hatchback',
+        fuelName: 'Pertamax',
+        wheelDriveName: 'AWD (All Wheel Drive)'
     }
 ];

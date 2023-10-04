@@ -23,7 +23,7 @@ const carSchema = new Schema({
         ref: 'Transmission'
     },
     kilometer: Number,
-    body_type: {
+    bodyType: {
         type: Schema.Types.ObjectId,
         ref: 'BodyType'
     },
@@ -31,14 +31,14 @@ const carSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Fuel'
     },
-    wheel_drive: {
+    driveWheelType: {
         type: Schema.Types.ObjectId,
         ref: 'WheelDrive'
     },
-    machine_cc: Number,
+    machineCC: Number,
     passenger: Number,
     door: Number,
-    seller_note: String,
+    sellerNote: String,
     is_sold: {
         type: Boolean,
         default: false
