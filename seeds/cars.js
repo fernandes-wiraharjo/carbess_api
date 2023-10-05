@@ -10,7 +10,26 @@ module.exports = [
         kilometer: '50000',
         bodyTypeName: 'MPV',
         fuelName: 'Premium',
-        wheelDriveName: 'AWD (All Wheel Drive)'
+        wheelDriveName: 'AWD (All Wheel Drive)',
+        sellerNote: `Tawaran Terbaik dari Carmudi.co.id <br/><br/>
+
+            READY DAN SIAP KIRIM <br/><br/>
+
+            ❤️𝗔𝗽𝗮𝗽𝘂𝗻 𝗠𝗼𝗯𝗶𝗹𝗻𝘆𝗮 𝗠 𝗖𝗮𝗿 𝗦𝗼𝗹𝘂𝘁𝗶𝗼𝗻 𝗦𝗼𝗹𝘂𝘀𝗶𝗻𝘆𝗮!🧏 <br/><br/>
+
+            Upgrade ke mobil impian, sekarang bukan cuman angan looh! <br/>
+            Apalagi kalau Anda adalah bisnis owner / pekerja keras yg tidak ada waktu buat urusin sana sini yang akhirnya hanya buang buang waktu, karena kami sangat yakin buat Anda waktu adalah segalanya bukan uang untuk segalanya. Karena kalau uang adalah segalanya tapi waktu Anda terbuang percuma hanya karena urusan remeh temeh, maka dipastikan kesempatan / peluang Anda untuk menghasilkan yang lebih besar ( CUAN ) bisa saja sekejap hilang. Karena dimana era sekarang ini kecepatan & ketepatan waktu adalah segalanya. <br/><br/>
+
+            So, Kamu bisa dapatkan mobil impian dengan kualitas idaman & Tepat Guna bersama team yg sangat berpengalaman & juga berkompeten di bidangnya untuk menghasilkan Solusi Tepat tentang mobil Impian yang ingin Anda miliki tanpa harus buang buang waktu. <br/>
+            Dan semua hanya ada di M Car Solution! <br/><br/>
+
+            ❤️𝙀𝙣𝙟𝙤𝙮 𝙔𝙤𝙪𝙧 𝘿𝙖𝙮, 𝙎𝙩𝙖𝙮 𝙎𝙖𝙛𝙚 & 𝙃𝙚𝙖𝙡𝙩𝙝𝙮🧏 <br/><br/>
+
+            Yuk, hubungi kami sekarang! <br/>
+            IG : @mcarsolution <br/>
+            📲 +628-1311011749 <br/>
+            📲 +628-568768586 <br/>
+            🌐 www.mcar-solution.com`
     },
     {
         name: 'Innova G 2018',

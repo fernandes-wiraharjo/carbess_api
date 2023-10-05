@@ -8,6 +8,14 @@ const carImageSchema = new Schema({
         type: Boolean,
         default: false
     },
+    is_list: {
+        type: Boolean,
+        default: false
+    },
+    is_detail: {
+        type: Boolean,
+        default: false
+    },
     created_at: {
         type: Date,
         default: currentTimestamp

@@ -103,32 +103,35 @@ const seedDB = async () => {
     //     const carImage = new CarImage({
     //         image: carImages[i].image,
     //         // car: await Car.findOne({ name: carImages[i].car_name }).select('_id'),
-    //         is_main: carImages[i].is_main
+    //         is_main: carImages[i].is_main || false,
+    //         is_list: carImages[i].is_list || false,
+    //         is_detail: carImages[i].is_detail || false,
     //     });
     //     await carImage.save();
     // }
 
     //cars
-    const idCarImages = await CarImage.find().select('_id');
-    await Car.deleteMany({});
-    for (let i=0; i < cars.length; i++) {
-        const car = new Car({
-            name: cars[i].name,
-            brand: await Brand.findOne({ name: cars[i].brandName }).select('_id'),
-            model: await Model.findOne({ name: cars[i].modelName }).select('_id'),
-            price: cars[i].price,
-            year: cars[i].year,
-            color: await Color.findOne({ name: cars[i].colorName }).select('_id'),
-            transmission: await Transmission.findOne({ name: cars[i].transmissionName }).select('_id'),
-            kilometer: cars[i].kilometer,
-            bodyType: await BodyType.findOne({ name: cars[i].bodyTypeName }).select('_id'),
-            fuel: await Fuel.findOne({ name: cars[i].fuelName }).select('_id'),
-            driveWheelType: await WheelDrive.findOne({ name: cars[i].wheelDriveName }).select('_id'),
-            is_recommended: cars[i].is_recommended,
-            images: i == 0 ? idCarImages : []
-        });
-        await car.save();
-    }
+    // const idCarImages = await CarImage.find().select('_id');
+    // await Car.deleteMany({});
+    // for (let i=0; i < cars.length; i++) {
+    //     const car = new Car({
+    //         name: cars[i].name,
+    //         brand: await Brand.findOne({ name: cars[i].brandName }).select('_id'),
+    //         model: await Model.findOne({ name: cars[i].modelName }).select('_id'),
+    //         price: cars[i].price,
+    //         year: cars[i].year,
+    //         color: await Color.findOne({ name: cars[i].colorName }).select('_id'),
+    //         transmission: await Transmission.findOne({ name: cars[i].transmissionName }).select('_id'),
+    //         kilometer: cars[i].kilometer,
+    //         bodyType: await BodyType.findOne({ name: cars[i].bodyTypeName }).select('_id'),
+    //         fuel: await Fuel.findOne({ name: cars[i].fuelName }).select('_id'),
+    //         driveWheelType: await WheelDrive.findOne({ name: cars[i].wheelDriveName }).select('_id'),
+    //         is_recommended: cars[i].is_recommended,
+    //         sellerNote: cars[i].sellerNote || '',
+    //         images: i == 0 ? idCarImages : []
+    //     });
+    //     await car.save();
+    // }
 }
 
 seedDB().then(() => {
