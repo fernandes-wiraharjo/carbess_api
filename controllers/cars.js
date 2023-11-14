@@ -49,9 +49,24 @@ module.exports.getList = async (req, res) => {
             delete filter.kilometerStart;
         }
 
+        if (filter.search) {
+            filter.name = { $regex: new RegExp(filter.search, 'i') }
+            delete filter.search;
+        }
+
         filter.is_sold = false;
+
+        let field = 'created_at';
+        let sortOrder = -1
+        if (filter.sort) {
+            const sortField = filter.sort;
+            [field, order] = sortField.split(' ');
+            sortOrder = order === '-1' ? -1 : 1;
+        }
+        delete filter.sort
         
         const cars = await Car.find(filter)
+            .sort({ [field]: sortOrder })
             .populate({
                 path: 'images',
                 match: { is_list: true },
