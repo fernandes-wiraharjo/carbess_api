@@ -82,6 +82,37 @@ module.exports.getList = async (req, res) => {
     }
 };
 
+module.exports.getById = async (req, res) => {
+    try {
+        const carId = req.params.id;
+        const car = await Car.findById(carId)
+            .populate({
+                path: 'images',
+                match: { is_detail: true },
+                select: 'image'
+            }).populate({
+                path: 'color',
+                select: 'name'
+            }).populate({
+                path: 'transmission',
+                select: 'name'
+            }).populate({
+                path: 'fuel',
+                select: 'name'
+            }).populate({
+                path: 'bodyType',
+                select: 'name'
+            }).populate({
+                path: 'driveWheelType',
+                select: 'name'
+            });
+        const result = {'carInfo' : car};
+        res.status(200).json(result);
+    } catch (error) {
+        throw(new ExpressError(error.message, 500));
+    }
+};
+
 module.exports.newArrival = async (req, res) => {
     const cars = await Car.find({is_sold: false})
         .sort('-created_at')
