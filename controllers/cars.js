@@ -136,3 +136,16 @@ module.exports.recommendedItem = async (req, res) => {
         });
     res.send(cars);
 };
+
+module.exports.getSimilarProducts = async (req, res) => {
+    const {id, idModel} = req.params;
+    const cars = await Car.find({model: idModel, _id: {$ne: id}})
+        .sort('-created_at')
+        .limit(4)
+        .populate({
+            path: 'images',
+            match: { is_main: true },
+            select: 'image'
+        });
+    res.send(cars);
+};

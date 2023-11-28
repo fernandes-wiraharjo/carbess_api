@@ -7,5 +7,6 @@ router.route('/get-list').post(catchAsync(cars.getList));
 router.route('/get-by-id/:id').get(catchAsync(cars.getById));
 router.route('/new-arrival').get(catchAsync(cars.newArrival));
 router.route('/recommended-item').get(catchAsync(cars.recommendedItem));
+router.route('/get-similar-products/:id/:idModel').get(catchAsync(cars.getSimilarProducts));
 
 module.exports = router;
